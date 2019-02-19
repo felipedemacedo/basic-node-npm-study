@@ -18,8 +18,17 @@ console.log(`O fatorial3 de 4 é ${fatorial3(4)}`)
 console.log(`O fatorial2 de 5 é ${fatorial2(5)}`)
 
 
+// utilizando o YARGS para passar argumentos via chamada de script
+const argv = require('yargs')
+    .alias("n", "num")
+    .demandOption("num")
+    .argv
 
+const num = argv.num
+console.log(`O fatorial de ${num} é ${fatorial(num)}`)
 
+// onde o node procura por módulos ?
+console.log(module.paths) // [ 'C:\\primeiro-projeto\\node_modules', 'C:\\node_modules' ]
 
 // escutando o evento de saída do script
 process.on('exit', () => {

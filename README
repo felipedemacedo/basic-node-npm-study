@@ -1,0 +1,27 @@
+npm init -y
+
+https://www.npmjs.com/package/yargs
+
+npm i yargs@13.2.1 --save
+```
+node main.js --num 10
+---------------
+Executando o script a partir do diretório C:\primeiro-projeto
+O fatorial de 6 é 720
+O fatorial3 de 4 é 24
+O fatorial2 de 5 é 120
+O fatorial de 10 é 3628800
+Arquivo test.txt salvo com sucesso.
+script prestes a ser finalizado !
+```
+node main.js -n 10
+---------------
+Executando o script a partir do diretório C:\primeiro-projeto
+O fatorial de 6 é 720
+O fatorial3 de 4 é 24
+O fatorial2 de 5 é 120
+O fatorial de 10 é 3628800
+Arquivo test.txt salvo com sucesso.
+script prestes a ser finalizado !
+```
+
