@@ -25,3 +25,101 @@ Arquivo test.txt salvo com sucesso.
 script prestes a ser finalizado !
 ```
 
+npm i typescript -g
+---------------
+C:\Users\Felipe\AppData\Roaming\npm\tsserver -> C:\Users\Felipe\AppData\Roaming\npm\node_modules\typescript\bin\tsserver
+C:\Users\Felipe\AppData\Roaming\npm\tsc -> C:\Users\Felipe\AppData\Roaming\npm\node_modules\typescript\bin\tsc
++ typescript@3.3.3
+updated 1 package in 4.885s
+
+
+tsc --init
+---------------
+message TS6071: Successfully created a tsconfig.json file.
+
+
+tsc
+---------------
+main.ts:2:58 - error TS2580: Cannot find name 'process'. Do you need to install type definitions for node? Try `npm i @types/node` and then add `node` to the types field in your tsconfig.
+
+2 console.log(`Executando o script a partir do diretório ${process.cwd()}`)
+                                                           ~~~~~~~
+
+main.ts:5:12 - error TS2580: Cannot find name 'require'. Do you need to install type definitions for node? Try `npm i @types/node` and then add `node` to the types field in your tsconfig.
+
+5 const fs = require('fs')
+             ~~~~~~~
+
+main.ts:12:18 - error TS2580: Cannot find name 'require'. Do you need to install type definitions for node? Try `npm i @types/node` and then add `node` to the types field in your tsconfig.
+
+12 const fatorial = require('./fatorial')      // primeiro na ordem de precedência (módulo com package.json)
+                    ~~~~~~~
+
+main.ts:13:19 - error TS2580: Cannot find name 'require'. Do you need to install type definitions for node? Try `npm i @types/node` and then add `node` to the types field in your tsconfig.
+
+13 const fatorial3 = require('./fatorial3')    // segundo
+                     ~~~~~~~
+
+main.ts:14:19 - error TS2580: Cannot find name 'require'. Do you need to install type definitions for node? Try `npm i @types/node` and then add `node` to the types field in your tsconfig.
+
+14 const fatorial2 = require('./fatorial2')    // terceiro e último
+                     ~~~~~~~
+
+main.ts:22:14 - error TS2580: Cannot find name 'require'. Do you need to install type definitions for node? Try `npm i @types/node` and then add `node` to the types field in your tsconfig.
+
+22 const argv = require('yargs')
+                ~~~~~~~
+
+main.ts:31:13 - error TS2580: Cannot find name 'module'. Do you need to install type definitions for node? Try `npm i @types/node` and then add `node` to the types field in your tsconfig.
+
+31 console.log(module.paths) // [ 'C:\\primeiro-projeto\\node_modules', 'C:\\node_modules' ]
+               ~~~~~~
+
+main.ts:34:1 - error TS2580: Cannot find name 'process'. Do you need to install type definitions for node? Try `npm i @types/node` and then add `node` to the types field in your tsconfig.
+
+34 process.on('exit', () => {
+   ~~~~~~~
+
+
+Found 8 errors.
+
+
+
+
+npm i @types/node --save-dev
+---------------
+npm WARN primeiro-projeto@1.0.0 No repository field.
+
++ @types/node@11.9.4
+added 1 package from 35 contributors and audited 68 packages in 3.005s
+found 0 vulnerabilities
+
+
+
+
+npm i @types/yargs -D
+---------------
+npm WARN primeiro-projeto@1.0.0 No repository field.
+
++ @types/yargs@12.0.9
+added 1 package from 6 contributors and audited 69 packages in 2.051s
+found 0 vulnerabilities
+
+
+tsc -w
+---------------
+[23:15:38] Starting compilation in watch mode...
+
+[23:15:41] Found 0 errors. Watching for file changes.
+
+
+node ./dist/main.js --num 10
+---------------
+Executando o script a partir do diretório C:\primeiro-projeto
+O fatorial de 6 é 720
+O fatorial de 10 é 3628800
+[ 'C:\\primeiro-projeto\\dist\\node_modules',
+  'C:\\primeiro-projeto\\node_modules',
+  'C:\\node_modules' ]
+Arquivo test.txt salvo com sucesso.
+script prestes a ser finalizado !
